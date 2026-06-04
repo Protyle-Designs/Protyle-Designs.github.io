@@ -14,7 +14,7 @@
 <style>
 
 /* =========================
-   GLOBAL RESET (IMPORTANT)
+   GLOBAL RESET
 ========================= */
 
 *{
@@ -50,7 +50,6 @@ body{
 
 /* =========================
    MAIN CONTAINER
-   (THIS IS YOUR ONLY WIDTH LIMIT)
 ========================= */
 
 .container{
@@ -107,6 +106,30 @@ body{
 }
 
 /* =========================
+   GALLERY (NEW SECTION)
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    margin-top:80px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio: 4 / 3;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+}
+
+/* =========================
    CONTACT
 ========================= */
 
@@ -127,7 +150,7 @@ body{
 }
 
 /* =========================
-   FOOTER BANNER (FULL WIDTH)
+   FOOTER BANNER
 ========================= */
 
 .footer-banner{
@@ -168,6 +191,10 @@ body{
     .logo-container img{
         width:180px;
     }
+
+    .gallery{
+        grid-template-columns:repeat(2, 1fr);
+    }
 }
 
 </style>
@@ -207,6 +234,24 @@ body{
             </p>
 
         </div>
+
+    </section>
+
+    <!-- =========================
+         GALLERY SECTION
+    ========================== -->
+
+    <section class="gallery">
+
+        <img src="img1.png" alt="Work 1">
+        <img src="img2.png" alt="Work 2">
+        <img src="img3.png" alt="Work 3">
+        <img src="img4.png" alt="Work 4">
+
+        <img src="img5.png" alt="Work 5">
+        <img src="img6.png" alt="Work 6">
+        <img src="img7.png" alt="Work 7">
+        <img src="img8.png" alt="Work 8">
 
     </section>
 
