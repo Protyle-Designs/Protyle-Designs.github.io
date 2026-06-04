@@ -2,207 +2,226 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Protyle Designs</title>
+<title>Protyle Designs</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        html, body{
-            margin:0;
-            padding:0;
-            overflow-x:hidden;
-        }
-        body{
-            margin:0;
-            font-family:'Inter',sans-serif;
-            background:#f8fafc;
-            color:#1e293b;
-        }
+<style>
 
-        .container{
-            max-width:1200px;
-            margin:auto;
-            padding:60px 30px;
-        }
+/* =========================
+   GLOBAL RESET (IMPORTANT)
+========================= */
 
-        .about{
-            display:flex;
-            align-items:center;
-            gap:60px;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        *{
-            box-sizing:border-box;
-        }
-        
-        .logo-container{
-            flex-shrink:0;
-        }
+html, body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
 
-        .logo-container img{
-            width:400px;
-            max-width:100%;
-        }
+/* =========================
+   BASE STYLES
+========================= */
 
-        .about-text{
-            flex:1;
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+}
 
-        .about-text h1{
-            font-size:48px;
-            margin-bottom:25px;
-            color:#0f172a;
-        }
+/* =========================
+   HEADER TITLE
+========================= */
 
-        .about-text p{
-            font-size:20px;
-            line-height:1.8;
-            color:#475569;
-        }
+.page-title{
+    text-align:center;
+    font-size:48px;
+    margin:40px 0;
+    color: rgb(107, 142, 35);
+}
 
-        .about-text a{
-            color:#2563eb;
-            text-decoration:none;
-            font-weight:600;
-        }
+/* =========================
+   MAIN CONTAINER
+   (THIS IS YOUR ONLY WIDTH LIMIT)
+========================= */
 
-        .about-text a:hover{
-            text-decoration:underline;
-        }
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 30px;
+}
 
-        .gallery{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:20px;
-            margin-top:80px;
-        }
+/* =========================
+   ABOUT SECTION
+========================= */
 
-        .gallery img{
-            width:320px;
-            border-radius:16px;
-            box-shadow:0 10px 25px rgba(0,0,0,0.08);
-        }
+.about{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
 
-        .contact{
-            text-align:center;
-            margin-top:80px;
-            padding-top:40px;
-            border-top:1px solid #e2e8f0;
-        }
+.logo-container{
+    flex-shrink:0;
+}
 
-        .contact h2{
-            color:#0f172a;
-        }
+.logo-container img{
+    width:400px;
+    max-width:100%;
+    height:auto;
+}
 
-        .contact p{
-            color:#64748b;
-            font-size:18px;
-        }
+.about-text{
+    flex:1;
+}
 
-        @media (max-width: 768px){
+.about-text h1{
+    font-size:48px;
+    margin-bottom:25px;
+    color:#0f172a;
+}
 
-            .about{
-                flex-direction:column;
-                text-align:center;
-            }
+.about-text p{
+    font-size:20px;
+    line-height:1.8;
+    color:#475569;
+}
 
-            .about{
-                display:flex;
-                align-items:center;
-                gap:60px;
-                flex-wrap:wrap;
-            }
-            
-            .about-text h1{
-                font-size:34px;
-            }
+.about-text a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
 
-            .about-text p{
-                font-size:18px;
-            }
+.about-text a:hover{
+    text-decoration:underline;
+}
 
-            .logo-container img{
-                width:180px;
-            }
+/* =========================
+   CONTACT
+========================= */
 
-            .footer-banner{
-                width: 100vw;
-                margin:0;
-                padding:0;
-            }
-            
-            .footer-banner img{
-                display:block;
-                width:100vw%;
-                max-width:100%;
-                height:auto;
-            }
+.contact{
+    text-align:center;
+    margin-top:80px;
+    padding-top:40px;
+    border-top:1px solid #e2e8f0;
+}
 
-        }
+.contact h2{
+    color:#0f172a;
+}
 
-    </style>
+.contact p{
+    color:#64748b;
+    font-size:18px;
+}
+
+/* =========================
+   FOOTER BANNER (FULL WIDTH)
+========================= */
+
+.footer-banner{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.footer-banner img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+    .page-title{
+        font-size:34px;
+    }
+
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-text h1{
+        font-size:34px;
+    }
+
+    .about-text p{
+        font-size:18px;
+    }
+
+    .logo-container img{
+        width:180px;
+    }
+}
+
+</style>
 
 </head>
 
-    
 <body>
-    
-    <h1 class="page-title">Protyle Designs</h1>
-    
-    <div class="container">
-    
-        <section class="about">
-    
-            <div class="logo-container">
-                <img src="Protyle_Designs_Logo_Square.png" alt="Protyle Designs Logo">
-            </div>
-    
-            <div class="about-text">
 
-                 <h1>Creating art and utility</h1>
-                <p>
-                    Welcome to the homepage of Protyle Designs!
-                <p>
-                    I am a designer and maker focused on creating both artistic and practical solutions.
-                    I actively share my work on several 3D model repositories, including
-                    <a href="https://makerworld.com/@Protyle_Designs" target="_blank">MakerWorld</a>,
-                    <a href="https://www.printables.com/@Protyle_Designs/models" target="_blank">Printables</a>,
-                    and <a href="https://www.nexprint.com/en/Protyle_Designs/home?component=UserHome" target="_blank">NexPrint</a>.
-                </p>
+<h1 class="page-title">Protyle Designs</h1>
 
-                <p>
-                    Based in Edmonton, Alberta, Canada, I offer local 3D CAD modeling, FDM 3D printing,
-                    laser engraving, laser cutting, and vinyl cutting services, with
-                    additional offerings planned for the future.
-                </p>
+<div class="container">
 
-            </div>
+    <section class="about">
 
-        </section>
+        <div class="logo-container">
+            <img src="Protyle_Designs_Logo_Square.png" alt="Protyle Designs Logo">
+        </div>
 
-        <section class="contact">
+        <div class="about-text">
 
-            <h2>Contact Us</h2>
+            <h1>Creating art and utility</h1>
+
+            <p>Welcome to the homepage of Protyle Designs!</p>
 
             <p>
-                Protyle.Designs@gmail.com
+                I am a designer and maker focused on creating both artistic and practical solutions.
+                I actively share my work on several 3D model repositories, including
+                <a href="https://makerworld.com/@Protyle_Designs" target="_blank">MakerWorld</a>,
+                <a href="https://www.printables.com/@Protyle_Designs/models" target="_blank">Printables</a>,
+                and
+                <a href="https://www.nexprint.com/en/Protyle_Designs/home?component=UserHome" target="_blank">NexPrint</a>.
             </p>
 
-        </section>
-        
-    </div>
-        
-    <section class="footer-banner">
-        <img src="Protyle_Designs_Banner_MW.png" alt="Banner">
+            <p>
+                Based in Edmonton, Alberta, Canada, I offer CAD modeling, 3D printing,
+                laser engraving, laser cutting, and vinyl cutting services.
+            </p>
+
+        </div>
+
     </section>
 
-</body>
+    <section class="contact">
 
+        <h2>Contact Us</h2>
+        <p>Protyle.Designs@gmail.com</p>
+
+    </section>
+
+</div>
+
+<section class="footer-banner">
+    <img src="Protyle_Designs_Banner_MW.png" alt="Banner">
+</section>
+
+</body>
 </html>
