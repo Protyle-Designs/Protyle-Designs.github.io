@@ -1,83 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Website</title>
+    <title>Protyle Designs</title>
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#fafafa;
-    color:#222;
-}
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.hero{
-    text-align:center;
-    padding:100px 20px;
-}
+    <style>
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
-}
+        body{
+            margin:0;
+            font-family:'Inter',sans-serif;
+            background:#f8fafc;
+            color:#1e293b;
+        }
 
-.subtitle{
-    font-size:20px;
-    color:#666;
-    max-width:700px;
-    margin:auto;
-}
+        .container{
+            max-width:1200px;
+            margin:auto;
+            padding:60px 30px;
+        }
 
-.gallery{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content:center;
-    padding:40px;
-}
+        .about{
+            display:flex;
+            align-items:center;
+            gap:60px;
+        }
 
-.gallery img{
-    width:300px;
-    border-radius:12px;
-}
+        .logo-container{
+            flex-shrink:0;
+        }
 
-.contact{
-    text-align:center;
-    padding:60px 20px;
-}
-</style>
+        .logo-container img{
+            width:250px;
+            max-width:100%;
+        }
+
+        .about-text{
+            flex:1;
+        }
+
+        .about-text h1{
+            font-size:48px;
+            margin-bottom:25px;
+            color:#0f172a;
+        }
+
+        .about-text p{
+            font-size:20px;
+            line-height:1.8;
+            color:#475569;
+        }
+
+        .about-text a{
+            color:#2563eb;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .about-text a:hover{
+            text-decoration:underline;
+        }
+
+        .gallery{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+            margin-top:80px;
+        }
+
+        .gallery img{
+            width:320px;
+            border-radius:16px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact{
+            text-align:center;
+            margin-top:80px;
+            padding-top:40px;
+            border-top:1px solid #e2e8f0;
+        }
+
+        .contact h2{
+            color:#0f172a;
+        }
+
+        .contact p{
+            color:#64748b;
+            font-size:18px;
+        }
+
+        @media (max-width: 768px){
+
+            .about{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .about-text h1{
+                font-size:34px;
+            }
+
+            .about-text p{
+                font-size:18px;
+            }
+
+            .logo-container img{
+                width:180px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<section class="gallery">
-    <img src="Protyle_Designs_Logo_Square.png">
-</section>
+    <div class="container">
 
-<section class="hero">
-    <h1>Protyle Designs</h1>
-    <p class="subtitle">
-        Welcome to the Homepage of Protyle Designs!
+        <section class="about">
 
-I am a designer and maker focusing on creating art and utility.
+            <div class="logo-container">
+                <img src="Protyle_Designs_Logo_Square.png" alt="Protyle Designs Logo">
+            </div>
 
-I actively post on multiple 3D repository websites including: Makerworld, Printables, and Nexprint. 
+            <div class="about-text">
 
-I also offer services in Edmonton, Alberta including: 3D CAD model, 3D printing, laser engraving, laser cutting, and vinyl cutting with more services to come in the near future!  
-    </p>
-</section>
+                <h1>Welcome to the Homepage of Protyle Designs!</h1>
 
-<section class="gallery">
-    <img src="Protyle_Designs_Banner_MW.png">
-</section>
+                <p>
+                    I am a designer and maker focused on creating both artistic and practical solutions.
+                    I actively share my work on several 3D model repositories, including
+                    <a href="https://makerworld.com" target="_blank">MakerWorld</a>,
+                    <a href="https://www.printables.com" target="_blank">Printables</a>,
+                    and Nexprint.
+                </p>
 
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p>Protyle.Designs@gmail.com</p>
-</section>
+                <p>
+                    Based in Edmonton, Alberta, I offer 3D CAD modeling, 3D printing,
+                    laser engraving, laser cutting, and vinyl cutting services, with
+                    additional offerings planned for the future.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Protyle.Designs@gmail.com
+            </p>
+
+        </section>
+
+        <section class="gallery">
+
+            <img src="Protyle_Designs_Banner_MW.png">
+
+        </section>
+
+    </div>
 
 </body>
+
 </html>
