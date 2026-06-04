@@ -106,7 +106,7 @@ body{
 }
 
 /* =========================
-   GALLERY (NEW SECTION)
+   GALLERY
 ========================= */
 
 .gallery{
@@ -127,6 +127,51 @@ body{
 
 .gallery img:hover{
     transform: scale(1.03);
+}
+
+/* =========================
+   SERVICES SECTION (NEW)
+========================= */
+
+.services{
+    margin-top:100px;
+}
+
+.services-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    color:#0f172a;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:#ffffff;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    transition:transform 0.2s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-4px);
+}
+
+.service-card h3{
+    font-size:16px;
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.service-card p{
+    font-size:14px;
+    color:#64748b;
+    line-height:1.4;
 }
 
 /* =========================
@@ -195,6 +240,14 @@ body{
     .gallery{
         grid-template-columns:repeat(2, 1fr);
     }
+
+    .services-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .services-title{
+        font-size:28px;
+    }
 }
 
 </style>
@@ -238,7 +291,7 @@ body{
     </section>
 
     <!-- =========================
-         GALLERY SECTION
+         GALLERY
     ========================== -->
 
     <section class="gallery">
@@ -255,6 +308,72 @@ body{
 
     </section>
 
+    <!-- =========================
+         SERVICES SECTION
+    ========================== -->
+
+    <section class="services">
+
+        <h2 class="services-title">Local Services Provided</h2>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>3D CAD Modeling</h3>
+                <p>Custom design and product development.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>3D Printing</h3>
+                <p>FDM prototyping and functional parts.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Laser Engraving</h3>
+                <p>Precision marking on multiple materials.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Laser Cutting</h3>
+                <p>Clean cuts for acrylic, wood, and plastics.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Vinyl Cutting</h3>
+                <p>Custom decals and signage.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Prototyping</h3>
+                <p>Turn ideas into physical models.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Design Help</h3>
+                <p>Refining concepts into manufacturable designs.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Small Batch Production</h3>
+                <p>Low-volume manufacturing runs.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>File Repair</h3>
+                <p>Fixing broken or non-printable files.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Custom Projects</h3>
+                <p>Unique builds tailored to your needs.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
     <section class="contact">
 
         <h2>Contact Us</h2>
@@ -263,6 +382,8 @@ body{
     </section>
 
 </div>
+
+<!-- FOOTER -->
 
 <section class="footer-banner">
     <img src="Protyle_Designs_Banner_MW.png" alt="Banner">
