@@ -61,11 +61,15 @@ section::after {
    NAVIGATION
 ========================= */
 
-.nav{
-    text-align:right;
-    padding:20px;
-    background:#ffffff;
-    border-bottom:1px solid var(--border);
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of images and cards */
+    text-align: right;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency looks great */
+    backdrop-filter: blur(5px); /* Blurs content behind it */
+    border-bottom: 1px solid var(--border);
 }
 
 .nav a{
@@ -87,7 +91,7 @@ section::after {
     font-size:48px;
     margin:20px 0;
     color: var(--PDGreen);
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 /* =========================
@@ -183,6 +187,35 @@ section::after {
 
 .gallery img:hover{
     transform: scale(1.03);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6); /* --text-dark with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-weight: 600;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
 }
 
 /* =========================
