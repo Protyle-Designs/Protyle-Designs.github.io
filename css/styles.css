@@ -15,7 +15,7 @@
     --border: #e2e8f0;
 
     /* SPACING */
-    --section-gap: 40px;
+    --section-gap: 20px;
 
 }
 
@@ -71,7 +71,7 @@ body{
 
 .page-title{
     font-size:48px;
-    margin:40px 0;
+    margin:20px 0;
     color: var(--PDGreen);
     padding-left: 40px;
 }
@@ -93,7 +93,7 @@ body{
 .about{
     display:flex;
     align-items:center;
-    gap:40px;
+    gap:20px;
     flex-wrap:wrap;
 }
 
