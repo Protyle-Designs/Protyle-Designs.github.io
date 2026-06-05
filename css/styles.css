@@ -5,7 +5,7 @@
 :root{
 
     /* COLORS */
-    --PDGreen: rgb(97,108,105);   /* your current accent grey-green */
+    --PDGreen: #525b58;   /* your current accent grey-green */
     --background: rgb(233,233,233);
 
     --text-dark: #0f172a;
