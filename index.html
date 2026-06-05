@@ -53,21 +53,54 @@
 
     <hr>
     
-    <section>
-        <div class="container">
-            <h2 class="gallery-title">Gallery</h2>
-            <div class="gallery">
+<section>
+    <div class="container">
+        <h2 class="gallery-title">Gallery</h2>
+        <div class="gallery">
+            
+            <div class="gallery-item">
                 <img src="images/Filte.png" alt="Work 1">
-                <img src="images/Milo.jpeg" alt="Work 2">
-                <img src="images/Radyl.jpeg" alt="Work 3">
-                <img src="images/Filte III.jpeg" alt="Work 4">
-                <img src="images/Dishwasher Sign.jpeg" alt="Work 5">
-                <img src="images/Rattan Cane Pen Holder.jpeg" alt="Work 6">
-                <img src="images/Filte II.png" alt="Work 7">
-                <img src="images/Guitar_Pick_Tray.jpeg" alt="Work 8">
+                <div class="gallery-overlay"><span>View Design</span></div>
             </div>
+
+            <div class="gallery-item">
+                <img src="images/Milo.jpeg" alt="Work 2">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Radyl.jpeg" alt="Work 3">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Filte III.jpeg" alt="Work 4">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Dishwasher Sign.jpeg" alt="Work 5">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Rattan Cane Pen Holder.jpeg" alt="Work 6">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Filte II.png" alt="Work 7">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Guitar_Pick_Tray.jpeg" alt="Work 8">
+                <div class="gallery-overlay"><span>View Design</span></div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <section>
         <div class="container">
@@ -105,13 +138,28 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>For more details on services like 3D modelling, FDM 3D printing, quotes, and more!</p>
-            <p><strong>Protyle.Designs@gmail.com</strong></p>
+            <p class="email-container">
+                <span id="myEmail">Protyle.Designs@gmail.com</span>
+                <button onclick="copyEmail()" class="copy-btn">Copy</button>
+        </p>
         </div>
     </section>
 
     <footer class="footer-banner">
         <img src="images/Protyle_Designs_Banner_MW.png" alt="Banner">
     </footer>
-
+    
+<script>
+function copyEmail() {
+    var emailText = document.getElementById("myEmail").innerText;
+    navigator.clipboard.writeText(emailText);
+    
+    // Quick visual feedback
+    var btn = document.querySelector('.copy-btn');
+    btn.innerText = "Copied!";
+    setTimeout(() => { btn.innerText = "Copy"; }, 2000);
+}
+</script>
+    
 </body>
 </html>
