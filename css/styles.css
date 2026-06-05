@@ -1,3 +1,17 @@
+:root{
+
+    --PDGreen: rgb(107,142,35);
+
+    --Greybackground: rgb(233,233,233);
+
+    --text-dark: #0f172a;
+
+    --text-light: #64748b;
+
+    --section-gap: 80px;
+
+}
+
 <style>
 
 /* =========================
