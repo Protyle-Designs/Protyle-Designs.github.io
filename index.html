@@ -51,56 +51,54 @@
         </div>
     </section>
 
-    <hr>
-    
-<section>
-    <div class="container">
-        <h2 class="gallery-title">Gallery</h2>
-        <div class="gallery">
-            
-            <div class="gallery-item">
-                <img src="images/Filte.png" alt="Work 1">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+    <section>
+        <div class="container">
+            <h2 class="gallery-title">Gallery</h2>
+            <div class="gallery">
+                
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Filte.png" alt="Work 1">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Milo.jpeg" alt="Work 2">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Milo.jpeg" alt="Work 2">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Radyl.jpeg" alt="Work 3">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Radyl.jpeg" alt="Work 3">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Filte III.jpeg" alt="Work 4">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Filte III.jpeg" alt="Work 4">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Dishwasher Sign.jpeg" alt="Work 5">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Dishwasher Sign.jpeg" alt="Work 5">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Rattan Cane Pen Holder.jpeg" alt="Work 6">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Rattan Cane Pen Holder.jpeg" alt="Work 6">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Filte II.png" alt="Work 7">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Filte II.png" alt="Work 7">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
-            <div class="gallery-item">
-                <img src="images/Guitar_Pick_Tray.jpeg" alt="Work 8">
-                <div class="gallery-overlay"><span>View Design</span></div>
-            </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/Guitar_Pick_Tray.jpeg" alt="Work 8">
+                    <div class="gallery-overlay"><span>View Design</span></div>
+                </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section>
         <div class="container">
@@ -138,28 +136,52 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>For more details on services like 3D modelling, FDM 3D printing, quotes, and more!</p>
-            <p class="email-container">
+            
+            <div class="email-click-wrapper" onclick="copyEmail()">
                 <span id="myEmail">Protyle.Designs@gmail.com</span>
-                <button onclick="copyEmail()" class="copy-btn">Copy</button>
-        </p>
+                <span class="tooltip" id="emailTooltip">Copied!</span>
+            </div>
         </div>
     </section>
 
     <footer class="footer-banner">
         <img src="images/Protyle_Designs_Banner_MW.png" alt="Banner">
     </footer>
-    
-<script>
-function copyEmail() {
-    var emailText = document.getElementById("myEmail").innerText;
-    navigator.clipboard.writeText(emailText);
-    
-    // Quick visual feedback
-    var btn = document.querySelector('.copy-btn');
-    btn.innerText = "Copied!";
-    setTimeout(() => { btn.innerText = "Copy"; }, 2000);
-}
-</script>
+
+    <div id="galleryModal" class="modal" onclick="closeLightbox()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalTargetImg" alt="Expanded View">
+    </div>
+
+    <script>
+        // 1. Text-Click Copy Email Functionality
+        function copyEmail() {
+            var emailText = document.getElementById("myEmail").innerText;
+            navigator.clipboard.writeText(emailText);
+            
+            var tooltip = document.getElementById("emailTooltip");
+            tooltip.classList.add("show");
+            
+            setTimeout(function() {
+                tooltip.classList.remove("show");
+            }, 2000);
+        }
+
+        // 2. Lightbox Expand Image Functionality
+        function openLightbox(element) {
+            var clickedImgSrc = element.querySelector('img').src;
+            var modalImg = document.getElementById("modalTargetImg");
+            modalImg.src = clickedImgSrc;
+            
+            var modalContainer = document.getElementById("galleryModal");
+            modalContainer.style.display = "flex";
+        }
+
+        function closeLightbox() {
+            var modalContainer = document.getElementById("galleryModal");
+            modalContainer.style.display = "none";
+        }
+    </script>
     
 </body>
 </html>
