@@ -70,10 +70,10 @@ body{
 ========================= */
 
 .page-title{
-    text-align:left;
     font-size:48px;
     margin:40px 0;
     color: var(--PDGreen);
+    padding-left: 40px;
 }
 
 /* =========================
