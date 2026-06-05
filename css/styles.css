@@ -61,15 +61,11 @@ section::after {
    NAVIGATION
 ========================= */
 
-.nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensures it stays on top of images and cards */
-    text-align: right;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95); /* Slight transparency looks great */
-    backdrop-filter: blur(5px); /* Blurs content behind it */
-    border-bottom: 1px solid var(--border);
+.nav{
+    text-align:right;
+    padding:20px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
 }
 
 .nav a{
@@ -91,7 +87,7 @@ section::after {
     font-size:48px;
     margin:20px 0;
     color: var(--PDGreen);
-    padding-left: 20px;
+    padding-left: 40px;
 }
 
 /* =========================
@@ -111,28 +107,25 @@ section::after {
 .about{
     display:flex;
     align-items:center;
-    gap:40px;
-    flex-wrap: nowrap; /* Prevents text from dropping below on desktop views */
-    width: 100%;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .logo-container{
-    flex: 0 0 35%; /* Reserves space on desktop layout */
-    max-width: 400px;
     flex-shrink:0;
 }
 
 .logo-container img{
-    width: 100%;
+    width:400px;
+    max-width:100%;
     height:auto;
-    display: block;
 }
 
 .about-text{
     flex:1;
 }
 
-.about-text h2{ /* Updated target descriptor to match semantic HTML wrapper */
+.about-text h1{
     font-size:48px;
     margin-bottom:25px;
     color: var(--text-dark);
@@ -179,53 +172,17 @@ section::after {
     color: var(--text-dark);
 }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-}
-
-.gallery-item:hover {
-    transform: scale(1.03);
-}
-
-.gallery-item img{
-    display: block;
+.gallery img{
     width:100%;
     aspect-ratio: 4 / 3;
     object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
 }
 
-.gallery-overlay {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(15, 23, 42, 0.65); /* Elegant dark-slate screen tint */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-}
-
-.gallery-overlay span {
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    border: 2px solid white;
-    padding: 8px 18px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
+.gallery img:hover{
+    transform: scale(1.03);
 }
 
 /* =========================
@@ -276,6 +233,7 @@ section::after {
 .contact{
     text-align:center;
     border-top:1px solid var(--border);
+    /* FIXED: padding-top removed because the global section rule handles it */
 }
 
 .contact h2{
@@ -286,58 +244,6 @@ section::after {
 .contact p{
     color: var(--PDGreen);
     font-size:20px;
-}
-
-/* Premium Text Clickable Copy Mechanism */
-.email-click-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 20px;
-    color: var(--PDGreen);
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.email-click-wrapper:hover {
-    color: var(--text-dark);
-    text-decoration: underline;
-}
-
-/* Elegant tooltips styling */
-.tooltip {
-    visibility: hidden;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #334155;
-    color: #fff;
-    text-align: center;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 400;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-}
-
-.tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #334155 transparent transparent transparent;
-}
-
-.tooltip.show {
-    visibility: visible;
-    opacity: 1;
 }
 
 /* =========================
@@ -357,57 +263,7 @@ section::after {
 }
 
 /* =========================
-   LIGHTBOX MODAL POPUP SYSTEM
-========================= */
-
-.modal {
-    display: none; /* Controlled interactively by JS logic */
-    position: fixed;
-    z-index: 2000; /* Places layout view above sticky nav panels */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(15, 23, 42, 0.9);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 85%;
-    max-height: 85vh;
-    border-radius: 8px;
-    object-fit: contain;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    animation-name: zoomIn;
-    animation-duration: 0.25s;
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.close-modal:hover {
-    color: #94a3b8;
-}
-
-/* =========================
-   MOBILE RESPONSIVENESS
+   MOBILE
 ========================= */
 
 @media (max-width: 768px){
@@ -418,17 +274,10 @@ section::after {
 
     .about{
         flex-direction:column;
-        flex-wrap: wrap; /* Allows stacking naturally on short mobile ports */
         text-align:center;
     }
 
-    .logo-container {
-        flex: 0 0 auto;
-        width: 180px;
-        margin: 0 auto;
-    }
-
-    .about-text h2{
+    .about-text h1{
         font-size:34px;
     }
 
@@ -441,6 +290,10 @@ section::after {
         font-size:18px;
     }
 
+    .logo-container img{
+        width:180px;
+    }
+
     .gallery{
         grid-template-columns:repeat(2, 1fr);
     }
@@ -451,9 +304,5 @@ section::after {
 
     .services-title{
         font-size:28px;
-    }
-    
-    .modal-content {
-        max-width: 95%;
     }
 }
